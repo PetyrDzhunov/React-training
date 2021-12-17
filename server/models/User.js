@@ -3,7 +3,10 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     email: String,
-    password: String,
+    password: {
+        type: String,
+        minlength: 6
+    }
 });
 
 userSchema.pre('save', function(next) {
