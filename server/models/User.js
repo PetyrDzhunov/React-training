@@ -16,6 +16,7 @@ userSchema.pre('save', function(next) {
         })
         .then((hashedPassword) => {
             this.password = hashedPassword;
+            next();
         })
         .catch((err) => console.log('Failed to hash the user\' password', +err));
 });

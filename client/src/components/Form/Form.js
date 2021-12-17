@@ -22,7 +22,9 @@ const GenericForm = () => {
 					{ 'Content-Type': 'application/json' }
 				)
 					.then(resData => console.log(resData))
-					.catch(err => console.log(err));
+					.catch(err => {
+						console.log(error);
+					});
 			}}
 		>
 			<Form style={{ backgroundColor: "aqua" }}>
@@ -34,7 +36,7 @@ const GenericForm = () => {
 
 				<div>
 					<label htmlFor="password">Password</label>
-					<Field name="password" />
+					<Field name="password" type="password" />
 				</div>
 				<ErrorMessage name="password" component={ValidationError}></ErrorMessage>
 				<hr />
